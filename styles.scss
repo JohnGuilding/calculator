@@ -1,0 +1,34 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+
+    header {
+        height: 10vh;
+
+        h1 {
+            margin: 0 auto;
+            text-align: center;
+        }
+    }
+
+    main {
+        height: 90vh;
+        
+        .calculator-container {
+            width: 30%;
+            height: 80%;
+            background-color: black;
+            border-radius: 25px;
+            margin: 0 auto;
+        }
+    }
+}
+
+// @media 
