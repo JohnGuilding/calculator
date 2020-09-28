@@ -94,6 +94,10 @@ main {
   color: white;
 }
 
+.btn:hover {
+  cursor: pointer;
+}
+
 .clear__btn {
   color: black;
   background-color: grey;
