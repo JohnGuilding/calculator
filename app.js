@@ -6,15 +6,6 @@
 // 4. How to change the text with the (textContext)
 // 5. For loops (to be covered tomorrow morning but you may have already come across them too)
 
-// +	Addition
-// -	Subtraction
-// *	Multiplication
-// **	Exponentiation (ES2016)
-// /	Division
-// %	Modulus (Remainder)
-// ++	Increment
-// --	Decrement
-
 // 1. declare variables
 // 2. add event listeners
 // 3. function for performing each calculation 
@@ -38,6 +29,8 @@ const btns = document.querySelectorAll('.number__btn');
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, '.'];
 
 let sum = [];
+let firstvalue = [];
+let secondValue = [];
 
 // add html
 btns.forEach(btn => {
@@ -45,7 +38,7 @@ btns.forEach(btn => {
         numbers.forEach(element => {
             if (element == btn.dataset.number) {
             calculatorOutput.innerHTML += element;
-            }
+            } 
         });
     });
 });
@@ -92,8 +85,7 @@ minusBtn.addEventListener('click', () => {
 plusBtn.addEventListener('click', () => {
     sum = `${calculatorOutput.innerHTML} +`;
     calculatorOutput.innerHTML = '';
-    console.log(sum);
-    console.log(calculatorOutput.innerHTML);
+    ;
 });
 
 // // PERCENTAGE FUNCTION
@@ -102,21 +94,72 @@ percentageBtn.addEventListener('click', () => {
     calculatorOutput.innerHTML = sum;
 });
 
+// const eval = () => {
+//     return Function
+// }
+
 // EQUALS FUNCTION
 equalsBtn.addEventListener('click', () => {
-    sum += ` ${calculatorOutput.innerHTML}`;
-    calculatorOutput.innerHTML = eval(sum);
+    sum += ` ${calculatorOutput.innerHTML}`; 
+    calculatorOutput.innerHTML = eval(sum); 
     console.log(sum);
     console.log(calculatorOutput.innerHTML);
 });
 
-
 // PLUSMINUS FUNCTION
-// plusMinusBtn.addEventListener('click', () => {
-//     calculatorOutput = -Math.abs(calculatorOutput.innerHTML);
-// });
+plusMinusBtn.addEventListener('click', () => {
+    if(Math.sign(calculatorOutput.innerHTML) === 1) {
+        calculatorOutput.innerHTML = -Math.abs(calculatorOutput.innerHTML);
+    } else {
+        calculatorOutput.innerHTML = Math.abs(calculatorOutput.innerHTML);
+    }
+});
 
-// const func = (num) => {
-//     return -Math.abs(num);
+// const calcLength = calculatorOutput.innerHTML.length;
+// console.log(calcLength);
+
+// calculatorOutput.addEventListener('onchange', () => {
+//     if (calculatorOutput.innerHTML.length >= 2) {
+//         console.log('yo');
+        
+//         // calculatorOutput.style.font.size = '40px';
+//     }
+// })
+
+// const textResize = () => {
+//     if (calcLengthLength >= 2) {
+//         console.log('yo');
+//         // calculatorOutput.style.font.size = '40px';
+//     }
 // }
-// console.log(func(-56));
+
+
+// const calculation = (operator, firstvalue, secondValue) => {
+//     switch (operator) {
+//         case '+': 
+//             sum = firstvalue + secondValue;
+//             break;
+//         case '-': 
+//             sum = firstvalue - secondValue;
+//             break;
+//         case '%': 
+//             sum = firstvalue / 100;
+//             break;
+//         case '*': 
+//             sum = firstvalue * secondValue;
+//             break;
+//         case '/': 
+//             sum = firstvalue / secondValue;
+//             break;
+//         default:
+//             console.log('ERRR');
+//     }
+// }
+
+// calculation('-', 1, 3);
+
+// console.log(sum);
+
+
+// sum[1]
+// switch sum[1] {
