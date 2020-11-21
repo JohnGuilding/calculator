@@ -25,7 +25,6 @@ btns.forEach(btn => {
     });
 });
 
-
 // CLEAR OUTPUT FUNCTION
 clearBtn.addEventListener('click', () => {
     const clear = () => {
@@ -35,13 +34,11 @@ clearBtn.addEventListener('click', () => {
     clear();
 });
 
-
 // DIVIDE FUNCTION
 divideBtn.addEventListener('click', () => {
     sum = `${calculatorOutput.innerHTML} /`;
     calculatorOutput.innerHTML = '';
 });
-
 
 // MULTIPLY FUNCTION
 multiplyBtn.addEventListener('click', () => {
@@ -55,14 +52,12 @@ minusBtn.addEventListener('click', () => {
     calculatorOutput.innerHTML = '';
 });
 
-
 // PLUS FUNCTION
 plusBtn.addEventListener('click', () => {
     sum = `${calculatorOutput.innerHTML} +`;
     calculatorOutput.innerHTML = '';
     ;
 });
-
 
 // PERCENTAGE FUNCTION
 percentageBtn.addEventListener('click', () => {
@@ -73,7 +68,12 @@ percentageBtn.addEventListener('click', () => {
 // EQUALS FUNCTION
 equalsBtn.addEventListener('click', () => {
     sum += ` ${calculatorOutput.innerHTML}`; 
-    calculatorOutput.innerHTML = eval(sum); 
+    const finalSum = eval(sum) + '';
+    calculatorOutput.innerHTML = finalSum; 
+    console.log(finalSum);
+    console.log(calculatorOutput.innerHTML);
+    console.log(typeof finalSum);
+    console.log(typeof calculatorOutput.innerHTML);
 });
 
 // PLUSMINUS FUNCTION
@@ -84,3 +84,31 @@ plusMinusBtn.addEventListener('click', () => {
         calculatorOutput.innerHTML = Math.abs(calculatorOutput.innerHTML);
     }
 });
+
+setInterval(() => {
+    let outputLength = calculatorOutput.innerHTML.length;
+
+    console.log(calculatorOutput.innerHTML.length);
+    // console.log(outputLength);
+
+    switch (outputLength) {
+        case 0: 
+            calculatorOutput.style.fontSize = "80px";
+            break;
+        case 5:
+            calculatorOutput.style.fontSize = "50px";
+            break;
+        case 9:
+            calculatorOutput.style.fontSize = "30px";
+            break;
+        case 15: 
+            calculatorOutput.style.fontSize = "20px";
+            break;
+        case 23: 
+            calculatorOutput.style.fontSize = "10px";
+            break;
+        default:
+            break;
+    }
+
+}, 1000);
