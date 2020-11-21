@@ -68,12 +68,9 @@ percentageBtn.addEventListener('click', () => {
 // EQUALS FUNCTION
 equalsBtn.addEventListener('click', () => {
     sum += ` ${calculatorOutput.innerHTML}`; 
-    const finalSum = eval(sum) + '';
-    calculatorOutput.innerHTML = finalSum; 
-    console.log(finalSum);
-    console.log(calculatorOutput.innerHTML);
-    console.log(typeof finalSum);
-    console.log(typeof calculatorOutput.innerHTML);
+    const finalSumString = eval(sum) + '';
+    const finalSumFormat = finalSumString.substring(0, 6);
+    calculatorOutput.innerHTML = finalSumFormat; 
 });
 
 // PLUSMINUS FUNCTION
@@ -87,9 +84,6 @@ plusMinusBtn.addEventListener('click', () => {
 
 setInterval(() => {
     let outputLength = calculatorOutput.innerHTML.length;
-
-    console.log(calculatorOutput.innerHTML.length);
-    // console.log(outputLength);
 
     switch (outputLength) {
         case 0: 
@@ -111,4 +105,4 @@ setInterval(() => {
             break;
     }
 
-}, 1000);
+}, 100);
